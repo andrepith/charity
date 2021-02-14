@@ -21,13 +21,15 @@ const CharityList = () => {
 
   return (
     <div className="container">
-      <div className="d-flex my-4">
-        <img
-          className="img-circle mr-4"
-          src="https://assets.kitabisa.cc/images/logos/logogram__ktbs_white.png"
-          alt="kita-bisa-logo"
-        />
-        <h1 className="flex-fill my-auto">Kitabisa</h1>
+      <div className="d-block d-md-flex my-4">
+        <div className="flex-fill d-flex mb-4">
+          <img
+            className="img-circle mr-md-4"
+            src="https://assets.kitabisa.cc/images/logos/logogram__ktbs_white.png"
+            alt="kita-bisa-logo"
+          />
+          <h1 className="my-auto">Kitabisa</h1>
+        </div>
         <div className="my-auto">
           <span className="mr-2">Sort By: </span>
           <select id="sort" name="sort" onClick={handleSort} selected="sort">
