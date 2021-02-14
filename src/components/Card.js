@@ -1,7 +1,12 @@
 import React from "react";
-import { diffDate } from "../helpers";
 
-export default ({ image, title, expired, donation_received }) => {
+export default ({
+  image,
+  title,
+  days_remaining,
+  donation_received,
+  donation_target,
+}) => {
   return (
     <div>
       <img
@@ -15,15 +20,26 @@ export default ({ image, title, expired, donation_received }) => {
           <h6>{title}</h6>
         </div>
         <div>
-          <hr />
+          <div
+            className="p-1 my-1 table-bordered"
+            style={{
+              backgroundColor:
+                donation_received === donation_target
+                  ? "var(--pink)"
+                  : "var(--gray)",
+            }}
+          />
           <div className="d-flex justify-content-between">
             <div>
               <div>Terkumpul</div>
-              <div>Rp. {donation_received.toLocaleString("id-ID")}</div>
+              <div>
+                {donation_received.toLocaleString("id-ID")}/
+                {donation_target.toLocaleString("id-ID")}
+              </div>
             </div>
             <div className="text-center">
               <div>Sisa Hari</div>
-              <div>{diffDate(Date.now(), expired * 1000)}</div>
+              <div>{days_remaining}</div>
             </div>
           </div>
         </div>
