@@ -20,15 +20,17 @@ export default ({
           <h6>{title}</h6>
         </div>
         <div>
-          <div
-            className="p-1 my-1 table-bordered"
-            style={{
-              backgroundColor:
-                donation_received === donation_target
-                  ? "var(--pink)"
-                  : "var(--gray)",
-            }}
-          />
+          <div className="my-1 table-bordered">
+            <div
+              style={{
+                height: "4px",
+                width:
+                  ((donation_received / donation_target) * 100).toString() +
+                  "%",
+                backgroundColor: "var(--pink)",
+              }}
+            />
+          </div>
           <div className="d-flex justify-content-between">
             <div>
               <div>Terkumpul</div>
